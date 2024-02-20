@@ -14,7 +14,7 @@ private:
     string email;
     string password;
 public:
-    Library *library = new Library();
+    Library *library;
     void printLibrary(); 
     Library getLibrary(); 
     void login(string &name, string &password);
