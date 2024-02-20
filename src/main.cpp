@@ -14,6 +14,6 @@ int main()
     User someone("Ub1y Canegrov", "someone@mymail.com", "123452");
     someone.printLibrary();
     Game game1("Minecraft", "path/to/minecraft.exe");
-    someone.addGame(game1);
+    someone.library->addGame(game1);
     someone.printLibrary();
 }

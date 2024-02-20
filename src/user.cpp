@@ -8,8 +8,6 @@ void User::login(string &name, string &password) {
 
 void User::printLibrary() { cout << username << "'s "; library->printInfo(); }
 
-Library User::getLibrary() { return *library; }
-
 User::User(): User{"na", "na", "na"} {}
 
 User::User(string &&newUsername, string &&newEmail, string &&newPassword): username{newUsername}, email{newEmail}, password{newPassword} {} 

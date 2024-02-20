@@ -13,10 +13,9 @@ private:
     string username;
     string email;
     string password;
-    Library *library = new Library();
 public:
+    Library *library = new Library();
     void printLibrary(); 
-    void addGame(Game newGame) { library->addGame(newGame); }
     Library getLibrary(); 
     void login(string &name, string &password);
     User();
