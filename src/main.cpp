@@ -1,8 +1,5 @@
 #include <iostream>
 #include "user.h"
-#include "library.cpp"
-#include "game.cpp"
-#include "user.cpp"
 using namespace std;
 
 int main()
