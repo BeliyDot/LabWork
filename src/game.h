@@ -8,19 +8,22 @@ using namespace std;
 class Game {
 private:
     unsigned int id;
-    string name;
-    string path;
-    string genre;
+    string *name;
+    string *path;
+    string *genre;
     vector<string> tags; 
 
 public:
     void printInfo();
-    string getGenre() { return genre; }
+    string getGenre() { return *genre; }
     void addTag(string &tag) { tags.push_back(tag); }
     Game(string &&name, string &&path);
     Game(string &&name, string &&path, string &&genre);
     Game(string &name, string &path);
     Game(string &name, string &path, string &&genre);
+    Game(const Game &other);
+    Game(Game &&other);
+    ~Game();
 };
 
 #endif

@@ -4,8 +4,8 @@
 using namespace std;
 
 void Game::printInfo() {
-    cout << "Name: " << name << endl
-    << "Genre: " << genre << endl;
+    cout << "Name: " << *name << endl
+    << "Genre: " << *genre << endl;
     if(!tags.empty()) {
         cout << "Tags: ";
         
@@ -20,8 +20,43 @@ void Game::printInfo() {
 
 Game::Game(string &&newName, string &&newPath): Game{newName, newPath, "Unknown"} {}
 
-Game::Game(string &&newName, string &&newPath, string &&newGenre): name{newName}, path{newPath}, genre{newGenre} {}
+Game::Game(string &&newName, string &&newPath, string &&newGenre) {
+    name = new string;  
+    path = new string;
+    genre = new string;
+    *name = newName;
+    *path = newPath;
+    *genre = newGenre;
+}
 
 Game::Game(string &newName, string &newPath): Game{newName, newPath, "Unknown"} {}
 
-Game::Game(string &newName, string &newPath, string &&newGenre): name{newName}, path{newPath}, genre{newGenre} {}
+Game::Game(string &newName, string &newPath, string &&newGenre) {
+    name = new string;  
+    path = new string;
+    genre = new string;
+    *name = newName;
+    *path = newPath;
+    *genre = newGenre;
+}
+
+Game::Game(const Game &other) {
+    name = new string;  
+    path = new string;
+    genre = new string;
+    *name = *other.name;
+    *path = *other.path;
+    *genre = *other.genre;
+}
+
+Game::Game(Game &&other): name{other.name}, path{other.path}, genre{other.genre} {
+    other.name = nullptr;
+    other.path = nullptr;
+    other.genre = nullptr;
+}
+
+Game::~Game() {
+    delete name;
+    delete path;
+    delete genre;
+}
