@@ -18,6 +18,8 @@ void Game::printInfo() {
     }
 }
 
+void Game::rename(string &&newName) { *name = newName; }
+
 // Constructors
 
 Game::Game(string &&newName, string &&newPath): Game{newName, newPath, "Unknown"} {}

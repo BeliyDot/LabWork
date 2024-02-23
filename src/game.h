@@ -17,6 +17,7 @@ public:
     void printInfo();
     string getGenre() { return *genre; }
     void addTag(string &tag) { tags.push_back(tag); }
+    void rename(string &&newName);
     Game(string &&name, string &&path);
     Game(string &&name, string &&path, string &&genre);
     Game(string &name, string &path);
