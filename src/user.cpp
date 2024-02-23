@@ -6,7 +6,7 @@ void User::login(string &name, string &password) {
     if((name == this->username || name == this->email) && password == this->password) online = true;
 }
 
-void User::printLibrary() { cout << username << "'s "; library->printInfo(); }
+void User::printLibrary() { cout << username << "'s "; cout << *library; }
 
 User::User(): User{"na", "na", "na"} {}
 
