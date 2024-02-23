@@ -1,6 +1,7 @@
 #ifndef LABWORK_GAME_H
 #define LABWORK_GAME_H
 
+#include <ostream>
 #include <vector>
 #include <iostream>
 using namespace std;
@@ -14,7 +15,6 @@ private:
     vector<string> tags; 
 
 public:
-    void printInfo();
     string getGenre() { return *genre; }
     void addTag(string &tag) { tags.push_back(tag); }
     void rename(string &&newName);
@@ -25,6 +25,7 @@ public:
     Game(const Game &other);
     Game(Game &&other);
     ~Game();
+    friend std::ostream operator<<(std::ostream &os, const Game &obj);
 };
 
 #endif

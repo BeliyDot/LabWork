@@ -3,15 +3,15 @@
 #include <ostream>
 using namespace std;
 
-void Game::printInfo() {
-    cout << "Name: " << *name << endl
-    << "Genre: " << *genre << endl;
-    if(!tags.empty()) {
+ostream operator<<(ostream &os, const Game &obj) {
+    cout << "Name: " << *obj.name << endl
+    << "Genre: " << *obj.genre << endl;
+    if(!obj.tags.empty()) {
         cout << "Tags: ";
         
-        for(int i = 0; i < tags.size(); i++) {
-            cout << tags[i];
-            if(i == tags.size() - 1)
+        for(int i = 0; i < obj.tags.size(); i++) {
+            cout << obj.tags[i];
+            if(i == obj.tags.size() - 1)
                 cout << '.' << endl;
             else cout << ", ";
         }
