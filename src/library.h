@@ -18,7 +18,7 @@ public:
     void addGame(Game newGame) { games.push_back(newGame); }
     Library filter(filters filter, string tag = "");
     friend Library operator+(const Library &lhs, const Library &rhs);
-    friend std::ostream operator<<(std::ostream &os, const Library &lib); 
+    friend std::ostream &operator<<(std::ostream &os, const Library &lib); 
 };
 
 

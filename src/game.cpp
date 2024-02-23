@@ -3,19 +3,20 @@
 #include <ostream>
 using namespace std;
 
-ostream operator<<(ostream &os, const Game &obj) {
-    cout << "Name: " << *obj.name << endl
+ostream &operator<<(ostream &os, const Game &obj) {
+    os << "Name: " << *obj.name << endl
     << "Genre: " << *obj.genre << endl;
     if(!obj.tags.empty()) {
-        cout << "Tags: ";
+        os << "Tags: ";
         
         for(int i = 0; i < obj.tags.size(); i++) {
-            cout << obj.tags[i];
+            os << obj.tags[i];
             if(i == obj.tags.size() - 1)
-                cout << '.' << endl;
-            else cout << ", ";
+                os << '.' << endl;
+            else os << ", ";
         }
     }
+    return os;
 }
 
 void Game::rename(string &&newName) { *name = newName; }
