@@ -19,6 +19,7 @@ public:
     Person(string &firstName, string &secondName, string newThirdName = "Unknown");
     Person(string &newFirstName, string &newSecondName, string &newThirdName);
     Person(string &firstName, string &secondName, string &thirdName, int newBirthYear, int newBirthMonth, int newBirthDay);
+    ~Person();
     friend ostream &operator<<(ostream &os, const Person &obj);
 };
 

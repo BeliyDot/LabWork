@@ -23,6 +23,12 @@ Person::Person(string &newFirstName, string &newSecondName, string newThirdName)
 Person::Person(string newFirstName, string newSecondName, string newThirdName):
     Person{newFirstName, newSecondName, newThirdName, 0, 0, 0} {}
     
+Person::~Person() {
+    delete firstName;
+    delete secondName;
+    delete thirdName;
+}    
+
 ostream &operator<<(ostream &os, const Person &obj) {
     os << "First name: " << *obj.firstName << endl
     << "Second name: " << *obj.secondName << endl
