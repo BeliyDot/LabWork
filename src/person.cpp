@@ -36,5 +36,18 @@ ostream &operator<<(ostream &os, const Person &obj) {
     << "Date of birth: ";
     if(obj.birthYear == 0) os << "Unknown" << endl;
     else os << obj.birthDay << '/' << obj.birthMonth << '/' << obj.birthYear << '/' << endl;
-    return os; 
+    return os;    
+}
+
+Person &Person::operator=(const Person &rhs) {
+    if(this == &rhs) return *this;
+
+    *this->firstName = *rhs.firstName;
+    *this->secondName = *rhs.secondName;
+    *this->thirdName = *rhs.thirdName;
+    this->birthDay = rhs.birthDay;
+    this->birthYear = rhs.birthYear;
+    this->birthMonth = rhs.birthMonth;
+
+    return *this;
 }

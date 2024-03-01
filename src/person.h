@@ -20,6 +20,7 @@ public:
     Person(string &newFirstName, string &newSecondName, string &newThirdName);
     Person(string &firstName, string &secondName, string &thirdName, int newBirthYear, int newBirthMonth, int newBirthDay);
     ~Person();
+    Person &operator=(const Person &rhs);
     friend ostream &operator<<(ostream &os, const Person &obj);
 };
 
