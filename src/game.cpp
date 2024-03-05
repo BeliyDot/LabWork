@@ -19,6 +19,18 @@ ostream &operator<<(ostream &os, const Game &obj) {
     return os;
 }
 
+Game &Game::operator=(const Game &rhs) {
+    if(this != &rhs) {
+        this->id = rhs.id;        
+        *this->name = *rhs.name;
+        *this->path = *rhs.path;
+        *this->genre = *rhs.genre;
+        this->tags = rhs.tags;
+    }    
+    return *this;
+}
+
+
 void Game::rename(string &&newName) { *name = newName; }
 
 // Constructors

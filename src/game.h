@@ -26,6 +26,7 @@ public:
     Game(Game &&other);
     ~Game();
     friend std::ostream &operator<<(std::ostream &os, const Game &obj);
+    Game &operator=(const Game &rhs);
 };
 
 #endif
