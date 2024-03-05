@@ -6,6 +6,7 @@ int main()
 {
     User dummy;
     dummy.printLibrary();
+    dummy.printInfo();
     
     User someone("Ub1y Canegrov", "someone@mymail.com", "123452");
     someone.printLibrary();
