@@ -23,6 +23,18 @@ Person::Person(string &newFirstName, string &newSecondName, string newThirdName)
 Person::Person(string newFirstName, string newSecondName, string newThirdName):
     Person{newFirstName, newSecondName, newThirdName, 0, 0, 0} {}
     
+Person::Person(const Person &obj) {
+    firstName = new string;
+    secondName = new string;
+    thirdName = new string;
+    *firstName = *obj.firstName;
+    *secondName = *obj.secondName;
+    *thirdName = *obj.thirdName;
+    birthDay = obj.birthDay;
+    birthMonth = obj.birthMonth;
+    birthYear = obj.birthYear;
+}
+
 Person::~Person() {
     delete firstName;
     delete secondName;
