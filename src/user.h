@@ -4,9 +4,10 @@
 #include <string>
 #include <vector>
 #include "library.h"
+#include "person.h"
 using namespace std;
 
-class User {
+class User : public Person {
 private:
     unsigned int id;
     bool online;
@@ -18,10 +19,12 @@ public:
     void printLibrary(); 
     Library getLibrary(); 
     void login(string &name, string &password);
+    void printInfo();
     User();
-    User(string &&newUsername, string &&newEmail, string &&newPassword);
-    User(string &newUsername, string &newEmail, string &newPassword);
+    User(string &&newUsername, string &&newEmail, string &&newPassword, Person persona = Person());
+    User(string &newUsername, string &newEmail, string &newPassword, Person persona = Person());
     ~User();
+    User &operator=(const User &rhs);
 };
 
 
