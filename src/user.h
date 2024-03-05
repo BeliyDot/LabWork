@@ -17,7 +17,6 @@ private:
 public:
     Library *library;
     void printLibrary(); 
-    Library getLibrary(); 
     void login(string &name, string &password);
     void printInfo();
     User();
