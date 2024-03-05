@@ -23,6 +23,7 @@ public:
     User();
     User(string &&newUsername, string &&newEmail, string &&newPassword, Person persona = Person());
     User(string &newUsername, string &newEmail, string &newPassword, Person persona = Person());
+    User(const User &other);
     ~User();
     User &operator=(const User &rhs);
 };

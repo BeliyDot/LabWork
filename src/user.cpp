@@ -30,6 +30,11 @@ User::User(string &newUsername, string &newEmail, string &newPassword, Person pe
     library = new Library();
 } 
 
+User::User(const User &other): username{other.username}, email{other.email}, password{other.password}, id{other.id} {
+    library = new Library();
+    *library = *other.library;
+}
+
 User::~User() {
     delete library;
 }
