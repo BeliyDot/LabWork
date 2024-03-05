@@ -10,9 +10,14 @@ class Library {
 private:
     vector<Game> games;
     enum filters {
+        GENRE,
+        RELEASED,
+        TAGS
+    };
+    enum sortings {
         ALPHABET,
         RELEASE_DATE,
-        GENRE,
+        PLAYTIME
     };
 public:
     void addGame(Game newGame) { games.push_back(newGame); }
