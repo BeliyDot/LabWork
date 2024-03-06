@@ -21,7 +21,7 @@ private:
     };
 public:
     void addGame(Game newGame) { games.push_back(newGame); }
-    Game getGame(int index);
+    Game *getGame(int index);
     int getIndex(Game game);
     Library filter(filters filter, string tag = "");
     friend Library operator+(const Library &lhs, const Library &rhs);

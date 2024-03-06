@@ -29,6 +29,7 @@ int Library::getIndex(Game game) {
     return -1;
 }
 
-Game Library::getGame(int index) {
-    if(index < games.size() && index >= 0) return games[index]; 
+Game *Library::getGame(int index) {
+    if(0 <= index < games.size()) return &games[index];
+    else return nullptr;
 }
