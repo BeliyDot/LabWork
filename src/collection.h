@@ -15,6 +15,9 @@ public:
         this->name = new string;
         *this->name = name;
     }
+    Collection(string &name, Library lib, vector<int> indexes);
+    Collection(string &name, Library lib, vector<Game> games);
 };
+
 
 #endif
