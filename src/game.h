@@ -27,6 +27,7 @@ public:
     ~Game();
     friend std::ostream &operator<<(std::ostream &os, const Game &obj);
     Game &operator=(const Game &rhs);
+    bool &operator==(const Game &rhs) const;
 };
 
 #endif

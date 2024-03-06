@@ -30,6 +30,10 @@ Game &Game::operator=(const Game &rhs) {
     return *this;
 }
 
+bool &Game::operator==(const Game &rhs) const {
+    bool result = this->id == rhs.id && *this->name == *rhs.name && *this->path == *rhs.path && *this->genre == *rhs.genre && this->tags == rhs.tags;
+    return result;
+}
 
 void Game::rename(string &&newName) { *name = newName; }
 
