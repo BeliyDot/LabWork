@@ -4,15 +4,6 @@
 #include <iostream>
 using namespace std;
 
-Person::Person(std::string &firstName, std::string &secondName, std::string &thirdName, int newBirthYear, int newBirthMonth, int newBirthDay):
-    birthYear{newBirthYear}, birthMonth{newBirthMonth}, birthDay{newBirthDay} {
-       this->firstName = new string; 
-       this->secondName = new string;
-       this->thirdName = new string;
-       *this->firstName = firstName;
-       *this->secondName = secondName;
-       *this->thirdName = thirdName;
-    }
 
 Person::Person(string &newFirstName, string &newSecondName, string &newThirdName):
     Person{newFirstName, newSecondName, newThirdName, 0, 0, 0} {}
@@ -30,6 +21,16 @@ Person::Person(const Person &obj): birthDay{obj.birthDay}, birthMonth{obj.birthM
     *firstName = *obj.firstName;
     *secondName = *obj.secondName;
     *thirdName = *obj.thirdName;
+}
+
+Person::Person(std::string &firstName, std::string &secondName, std::string &thirdName, int newBirthYear, int newBirthMonth, int newBirthDay):
+    birthYear{newBirthYear}, birthMonth{newBirthMonth}, birthDay{newBirthDay} {
+   this->firstName = new string; 
+   this->secondName = new string;
+   this->thirdName = new string;
+   *this->firstName = firstName;
+   *this->secondName = secondName;
+   *this->thirdName = thirdName;
 }
 
 Person::~Person() {
