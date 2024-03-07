@@ -7,6 +7,7 @@ class Collection : public Library {
 private:
     string *name;
 public:
+    string getName() { return *name; }
     Collection(string &name) {
         this->name = new string;
         *this->name = name;
