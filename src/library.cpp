@@ -22,9 +22,18 @@ std::ostream &operator<<(std::ostream &os, const Library &obj) {
     return os;
 }
 
+bool Library::hasGame(Game game) {
+    for(Game gayme : games) {
+        if(gayme == game) return true;
+    } 
+    return false;
+}
+
 int Library::getIndex(Game game) {
-    for(int i = 0; i < games.size(); i++) {
-        if(game == games[i]) return i;
+    if(hasGame(game)) {
+        for(int i = 0; i < games.size(); i++) {
+            if(game == games[i]) return i;
+        }
     }
     return -1;
 }

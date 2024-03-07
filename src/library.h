@@ -21,6 +21,7 @@ private:
     };
 public:
     void addGame(Game newGame) { games.push_back(newGame); }
+    bool hasGame(Game game);
     Game *getGame(int index);
     int getIndex(Game game);
     Library filter(filters filter, string tag = "");
