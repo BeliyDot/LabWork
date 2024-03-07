@@ -17,7 +17,7 @@ Collection::Collection(string &name, Library lib, vector<Game> games) {
     *this->name = name;
 
     for(Game game : games) {
-        if(lib.getIndex(game) != -1) this->addGame(game);
+        if(lib.hasGame(game)) this->addGame(game);
     }
 }
 

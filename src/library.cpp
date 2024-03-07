@@ -15,7 +15,6 @@ Library operator+(const Library &lhs, const Library &rhs) {
 }
 
 std::ostream &operator<<(std::ostream &os, const Library &obj) {
-    os << "Game Library: " << endl;
     for(Game game : obj.games) {
         os << game;
     }
