@@ -30,8 +30,8 @@ Game &Game::operator=(const Game &rhs) {
     return *this;
 }
 
-bool &Game::operator==(const Game &rhs) const {
-    bool result = this->id == rhs.id && *this->name == *rhs.name && *this->path == *rhs.path && *this->genre == *rhs.genre && this->tags == rhs.tags;
+bool &operator==(const Game &lhs, const Game &rhs) {
+    bool result = lhs.id == rhs.id && *lhs.name == *rhs.name && *lhs.path == *rhs.path && *lhs.genre == *rhs.genre && lhs.tags == rhs.tags;
     return result;
 }
 
