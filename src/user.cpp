@@ -64,7 +64,7 @@ User::User(const User &other): username{other.username}, email{other.email}, pas
     *library = *other.library;
 }
 
-User::User(const User &other, Person persona): Person(persona), username{other.username}, email{other.email}, password{other.password}, id{other.id} {
+User::User(const User &other, Person &persona): Person(persona), username{other.username}, email{other.email}, password{other.password}, id{other.id} {
     library = new Library();
     *library = *other.library;
 }
