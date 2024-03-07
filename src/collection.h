@@ -18,6 +18,7 @@ public:
     }
     Collection(string &name, Library lib, vector<int> indexes);
     Collection(string &name, Library lib, vector<Game> games);
+    bool &operator==(const Collection &rhs) const;
 };
 
 

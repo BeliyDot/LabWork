@@ -20,3 +20,8 @@ Collection::Collection(string &name, Library lib, vector<Game> games) {
         if(lib.getIndex(game) != -1) this->addGame(game);
     }
 }
+
+bool &Collection::operator==(const Collection &rhs) const {
+    bool result = this->name == rhs.name && this->getGames() == rhs.getGames();
+    return result;
+}
