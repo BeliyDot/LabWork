@@ -31,7 +31,7 @@ Game &Game::operator=(const Game &rhs) {
 }
 
 bool &operator==(const Game &lhs, const Game &rhs) {
-    bool result = lhs.id == rhs.id && *lhs.name == *rhs.name && *lhs.path == *rhs.path && *lhs.genre == *rhs.genre && lhs.tags == rhs.tags;
+    bool result = *lhs.name == *rhs.name && *lhs.path == *rhs.path && *lhs.genre == *rhs.genre && lhs.tags == rhs.tags;
     return result;
 }
 
