@@ -31,15 +31,18 @@ void User::createCollection(string &name, vector<int> indexes) {
 }
 
 void User::addToCollection(string &name, Game game) {
-    for(Collection collection : collections) {
-        if(collection.getName() == name && library->hasGame(game)) { collection.addGame(game); }
+    for(int i = 0; i < collections.size(); i++) {
+        if(collections[i].getName() == name && library->hasGame(game)) { 
+            collections[i].addGame(game); 
+            break;
+        }
     }
 }
 
 void User::printCollections() {
     cout << username << "'s collections:" << endl;
     for(Collection collection : collections) {
-        cout << collection.getName() << ": " << collection << endl;
+        cout << collection.getName() << ": " << endl << collection << endl;
     }
 }
 
