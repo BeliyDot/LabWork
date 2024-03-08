@@ -31,8 +31,10 @@ Game &Game::operator=(const Game &rhs) {
 }
 
 bool &operator==(const Game &lhs, const Game &rhs) {
-    bool result = *lhs.name == *rhs.name && *lhs.path == *rhs.path && *lhs.genre == *rhs.genre && lhs.tags == rhs.tags;
-    return result;
+    bool *result = new bool;
+    if(*lhs.name == *rhs.name && *lhs.genre == *rhs.genre && *lhs.path == *rhs.path && lhs.tags == rhs.tags) *result = true;
+
+    return *result;
 }
 
 void Game::rename(string &&newName) { *name = newName; }
