@@ -3,7 +3,7 @@
 
 #include "game.h"
 
-class DevGame : public Game {
+class DevGame final : public Game {
 private:
     string *version;
     string *pathToBuild;

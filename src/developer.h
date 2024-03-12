@@ -4,7 +4,7 @@
 #include "devgame.h"
 #include "user.h"
 
-class Developer : public User {
+class Developer final : public User {
 private:
     vector<DevGame> devLib;
 public:
