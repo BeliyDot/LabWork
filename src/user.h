@@ -26,6 +26,7 @@ public:
     void addToCollection(string &name, Game game);
     bool hasCollection(Collection collection);
     void printCollections();
+    void sayHi() { cout << "Hi from " << username << endl; }
     User();
     User(string &&newUsername, string &&newEmail, string &&newPassword, Person persona = Person());
     User(string &newUsername, string &newEmail, string &newPassword, Person persona = Person());

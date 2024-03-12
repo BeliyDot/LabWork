@@ -39,4 +39,9 @@ int main()
     belDot.printLibrary();
     belDot.printCollections();
     
+    artem.sayHi();
+    belDot.sayHi();
+    
+    Person *example = new User;
+    example->sayHi();
 }

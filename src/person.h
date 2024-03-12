@@ -15,6 +15,7 @@ private:
     int birthMonth;
     int birthDay;
 public:
+    void sayHi() { cout << "Hi from " << *firstName << endl; }
     Person(string newFirstName = "Unknown", string newSecondName = "Unknown", string newThirdName = "Unknown");
     Person(string &firstName, string &secondName, string newThirdName = "Unknown");
     Person(string &newFirstName, string &newSecondName, string &newThirdName);
