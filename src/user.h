@@ -18,6 +18,8 @@ private:
     vector<Collection> collections;
 public:
     Library *library;
+    virtual void description() override { cout << "I am a game library user. My username is " << username << '.' << endl; }
+    virtual void hasLibrary() override { cout << "I have a game library. It contains " << library->gameCount() << " games." << endl; }
     void printLibrary(); 
     void login(string &name, string &password);
     void printInfo();
