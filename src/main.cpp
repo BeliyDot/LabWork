@@ -1,5 +1,6 @@
 #include <iostream>
 #include "user.h"
+#include "developer.h"
 using namespace std;
 
 int main()
@@ -44,4 +45,11 @@ int main()
     
     Person *example = new User;
     example->sayHi();
+    
+    example->description();
+    example->hasLibrary();
+    
+    Person *anotherExample = new Developer;
+    anotherExample->description();
+    anotherExample->hasLibrary();
 }
