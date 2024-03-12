@@ -35,7 +35,7 @@ public:
     User(string &newUsername, string &newEmail, string &newPassword, Person persona = Person());
     User(const User &other);
     User(const User &other, Person &persona); 
-    ~User();
+    virtual ~User();
     User &operator=(const User &rhs);
 };
 
