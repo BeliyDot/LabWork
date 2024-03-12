@@ -17,6 +17,7 @@ private:
     string password;
     vector<Collection> collections;
 public:
+    string getUsername() { return username; }
     Library *library;
     virtual void description() override { cout << "I am a game library user. My username is " << username << '.' << endl; }
     virtual void hasLibrary() override { cout << "I have a game library. It contains " << library->gameCount() << " games." << endl; }
