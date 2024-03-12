@@ -21,6 +21,7 @@ private:
     };
 public:
     void addGame(Game newGame) { games.push_back(newGame); }
+    int gameCount() { return games.size(); }
     vector<Game> getGames() const { return games; }
     bool hasGame(Game game);
     Game *getGame(int index);
