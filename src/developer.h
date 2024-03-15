@@ -16,6 +16,8 @@ public:
     Developer(): User() {} 
     Developer(string &username, string &email, string &password, Person persona = Person()):
         User(username, email, password, persona) {}
+    Developer(string &&username, string &&email, string &&password, Person persona = Person()):
+        User(username, email, password, persona) {}
     virtual ~Developer() { }
 };
 
