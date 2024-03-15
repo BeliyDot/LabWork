@@ -3,6 +3,11 @@
 #include "developer.h"
 using namespace std;
 
+
+void print(Person &pers) {
+    cout << pers;
+}
+
 int main()
 {
     User dummy;
@@ -49,7 +54,16 @@ int main()
     example->description();
     example->hasLibrary();
     
-    Person *anotherExample = new Developer;
+    Person *anotherExample = new Developer();
     anotherExample->description();
     anotherExample->hasLibrary();
+    
+    Person john = Person("John", "Carmack", "");
+    Developer carmack("carmack1993", "john.carmack@aol.com", "0p3n-s0urc3", Person("John", "Carmack", ""));
+
+    print(belDot);
+    print(carmack);
+
+    delete example;
+    delete anotherExample;
 }
