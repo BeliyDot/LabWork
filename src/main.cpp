@@ -58,11 +58,12 @@ int main()
     anotherExample->description();
     anotherExample->hasLibrary();
     
-    Person john = Person("John", "Carmack", "");
+    Person john = Person("John", "Carmack", "Doom");
     Developer carmack("carmack1993", "john.carmack@aol.com", "0p3n-s0urc3", Person("John", "Carmack", ""));
 
     print(belDot);
     print(carmack);
+    print(john);
 
     delete example;
     delete anotherExample;
