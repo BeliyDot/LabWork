@@ -1,6 +1,7 @@
 #include "user.h"
 #include "collection.h"
 #include "library.h"
+#include <ostream>
 #include <string>
 
 void User::login(string &name, string &password) {
@@ -86,4 +87,20 @@ User &User::operator=(const User &rhs) {
     this->email = rhs.email;
     
     return *this;
+}
+
+ostream &operator<<(ostream &os, const User &usr) {
+    os << "Username: " << usr.username << endl
+    << "Email: " << usr.email << endl
+    << usr;
+    return os;
+}
+
+istream &operator>>(istream &is, User &usr) {
+    string username, email, password;
+    
+    is >> username >> email >> password;
+    usr = User(username, email, password);
+
+    return is;
 }

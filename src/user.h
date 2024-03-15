@@ -1,6 +1,7 @@
 #ifndef LABWORK_USER_H
 #define LABWORK_USER_H
 
+#include <istream>
 #include <string>
 #include <vector>
 #include "library.h"
@@ -37,6 +38,8 @@ public:
     User(const User &other, Person &persona); 
     virtual ~User();
     User &operator=(const User &rhs);
+    friend ostream &operator<<(ostream &os, const User &usr);
+    friend istream &operator>>(istream &is, User &usr);
 };
 
 
