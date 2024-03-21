@@ -22,6 +22,8 @@ public:
     Library *library;
     virtual void description() override { cout << "I am a game library user. My username is " << username << '.' << endl; }
     virtual void hasLibrary() override { cout << "I have a game library. It contains " << library->gameCount() << " games." << endl; }
+    virtual bool isDev() { return false; }
+    virtual bool isAdmin() { return false; }
     void printLibrary(); 
     void login(string &name, string &password);
     void printInfo();

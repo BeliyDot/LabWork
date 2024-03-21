@@ -6,6 +6,8 @@
 
 class Administrator : public User {
 public:
+    virtual bool isAdmin() override { return true; }
+
     vector<User> getUsers();
     vector<Game> getGames();
     vector<DevGame> getRequested();
