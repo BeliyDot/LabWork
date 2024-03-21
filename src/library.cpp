@@ -2,6 +2,7 @@
 #include <iostream>
 using namespace std;
 
+// Operator overloads
 
 Library operator+(const Library &lhs, const Library &rhs) {
     Library result;
@@ -27,6 +28,8 @@ bool Library::hasGame(Game game) {
     } 
     return false;
 }
+
+// Getting game/index methods
 
 int Library::getIndex(Game game) {
     if(hasGame(game)) {

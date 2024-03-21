@@ -22,11 +22,14 @@ private:
 public:
     void addGame(Game newGame) { games.push_back(newGame); }
     int gameCount() { return games.size(); }
-    vector<Game> getGames() const { return games; }
     bool hasGame(Game game);
+
+    vector<Game> getGames() const { return games; }
     Game *getGame(int index);
     int getIndex(Game game);
+
     Library filter(filters filter, string tag = "");
+
     friend Library operator+(const Library &lhs, const Library &rhs);
     friend std::ostream &operator<<(std::ostream &os, const Library &lib); 
 };

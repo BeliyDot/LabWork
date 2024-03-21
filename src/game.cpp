@@ -3,6 +3,8 @@
 #include <ostream>
 using namespace std;
 
+// Operator overloads
+
 ostream &operator<<(ostream &os, const Game &obj) {
     os << "Name: " << *obj.name << endl
     << "Genre: " << *obj.genre << endl;

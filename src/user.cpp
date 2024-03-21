@@ -8,13 +8,7 @@ void User::login(string &name, string &password) {
     if((name == this->username || name == this->email) && password == this->password) online = true;
 }
 
-void User::printLibrary() { cout << username << "'s game library:" << endl; cout << *library; }
-
-
-void User::printInfo() {
-    cout << "Username: " << username << endl;
-    cout << *this;
-}
+// Collection management methods
 
 bool User::hasCollection(Collection collection) {
     for(Collection coll : collections) {
@@ -40,12 +34,23 @@ void User::addToCollection(string &name, Game game) {
     }
 }
 
+// Printable methods
+
 void User::printCollections() {
     cout << username << "'s collections:" << endl;
     for(Collection collection : collections) {
         cout << collection.getName() << ": " << endl << collection << endl;
     }
 }
+
+void User::printLibrary() { cout << username << "'s game library:" << endl; cout << *library; }
+
+void User::printInfo() {
+    cout << "Username: " << username << endl;
+    cout << *this;
+}
+
+// Constructors & destructor
 
 User::User(): User{"na", "na", "na"} {}
 
@@ -76,6 +81,8 @@ User::User(const User &other, Person &persona): Person(persona), username{other.
 User::~User() {
     delete library;
 }
+
+// Operator overloads
 
 User &User::operator=(const User &rhs) {
     if(this == &rhs) return *this;

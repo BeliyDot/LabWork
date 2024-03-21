@@ -16,8 +16,10 @@ private:
 
 public:
     string getGenre() { return *genre; }
+
     void addTag(string &tag) { tags.push_back(tag); }
     void rename(string &&newName);
+
     Game(string &&name, string &&path);
     Game(string &&name, string &&path, string &&genre);
     Game(string &name, string &path);
@@ -25,6 +27,7 @@ public:
     Game(const Game &other);
     Game(Game &&other);
     ~Game();
+
     friend std::ostream &operator<<(std::ostream &os, const Game &obj);
     Game &operator=(const Game &rhs);
     friend bool &operator==(const Game &lhs, const Game &rhs);

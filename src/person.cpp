@@ -4,6 +4,7 @@
 #include <iostream>
 using namespace std;
 
+// Constructors & destructor
 
 Person::Person(string &newFirstName, string &newSecondName, string &newThirdName):
     Person{newFirstName, newSecondName, newThirdName, 0, 0, 0} {}
@@ -38,6 +39,8 @@ Person::~Person() {
     delete secondName;
     delete thirdName;
 }    
+
+// Operator overloads
 
 ostream &operator<<(ostream &os, const Person &obj) {
     os << "First name: " << *obj.firstName << endl
