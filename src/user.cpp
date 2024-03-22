@@ -3,9 +3,14 @@
 #include "library.h"
 #include <ostream>
 #include <string>
+#include <fstream>
 
-void User::login(string &name, string &password) {
-    if((name == this->username || name == this->email) && password == this->password) online = true;
+bool User::login(string &name, string &password) {
+    if((name == this->username || name == this->email) && password == this->password) {
+        online = true;
+        return true;
+    }
+    return false;
 }
 
 // Collection management methods
@@ -52,19 +57,29 @@ void User::printInfo() {
 
 // Constructors & destructor
 
-User::User(): User{"na", "na", "na"} {}
+User::User(): User{"na", "na", "na", 0, 0} {}
 
-User::User(string &&newUsername, string &&newEmail, string &&newPassword, Person persona): 
-    username{newUsername}, email{newEmail}, password{newPassword}, Person(persona) 
+User::User(string &&newUsername, string &&newEmail, string &&newPassword, bool isRDev, bool isRAdmin, Person persona): 
+    username{newUsername}, email{newEmail}, password{newPassword}, isDev{isRDev}, isAdmin{isRAdmin}, Person(persona) 
     {
     id = 0;
     library = new Library();
 } 
 
+
 User::User(string &newUsername, string &newEmail, string &newPassword, Person persona):
-    username{newUsername}, email{newEmail}, password{newPassword}, Person(persona) 
+ User(newUsername, newEmail, newPassword, 0, 0, persona) {}
+ 
+User::User(string &&newUsername, string &&newEmail, string &&newPassword, Person persona):
+ User(newUsername, newEmail, newPassword, 0, 0, persona) {}
+
+User::User(string &newUsername, string &newEmail, string &newPassword, bool isRDev, bool isRAdmin, Person persona):
+    username{newUsername}, email{newEmail}, password{newPassword}, isDev{isRDev}, isAdmin{isRAdmin}, Person(persona) 
     {
-    id = 0;
+    ifstream users("data/users.txt", ios::ate);
+    if(users.is_open()) {
+        users >> id;
+    } else id = 0; 
     library = new Library();
 } 
 
@@ -92,6 +107,8 @@ User &User::operator=(const User &rhs) {
     this->username = rhs.username;
     this->password = rhs.password;
     this->email = rhs.email;
+    this->isAdmin = rhs.isAdmin;
+    this->isDev = rhs.isDev;
     
     return *this;
 }
@@ -105,9 +122,10 @@ ostream &operator<<(ostream &os, const User &usr) {
 
 istream &operator>>(istream &is, User &usr) {
     string username, email, password;
+    bool isDev, isAdmin;
     
-    is >> username >> email >> password;
-    usr = User(username, email, password);
+    is >> username >> email >> password >> isDev >> isAdmin;
+    usr = User(username, email, password, isDev, isAdmin);
 
     return is;
 }

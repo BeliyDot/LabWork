@@ -20,13 +20,13 @@ private:
 public:
     string getUsername() { return username; }
     Library *library;
+    bool isDev;
+    bool isAdmin;
 
     virtual void description() override { cout << "I am a game library user. My username is " << username << '.' << endl; }
     virtual void hasLibrary() override { cout << "I have a game library. It contains " << library->gameCount() << " games." << endl; }
-    virtual bool isDev() { return false; }
-    virtual bool isAdmin() { return false; }
     
-    void login(string &name, string &password);
+    bool login(string &name, string &password);
 
     void createCollection(string &name, vector<Game> games = {});
     void createCollection(string &name, vector<int> indexes = {});
@@ -42,6 +42,8 @@ public:
     User();
     User(string &&newUsername, string &&newEmail, string &&newPassword, Person persona = Person());
     User(string &newUsername, string &newEmail, string &newPassword, Person persona = Person());
+    User(string &&newUsername, string &&newEmail, string &&newPassword, bool isRDev, bool isRAdmin, Person persona = Person());
+    User(string &newUsername, string &newEmail, string &newPassword, bool isRDev, bool isRAdmin, Person persona = Person());
     User(const User &other);
     User(const User &other, Person &persona); 
     virtual ~User();
