@@ -5,9 +5,9 @@
 #include "developer.h"
 
 class Administrator : public User {
+private:
+    bool admin = true;
 public:
-    bool isAdmin = true;
-
     vector<User> getUsers();
     vector<Game> getGames();
     vector<DevGame> getRequested();

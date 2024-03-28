@@ -8,9 +8,9 @@
 class Developer final : public User {
 private:
     vector<DevGame> devLib;
+    bool dev = true;
 public:
     void addDevGame(DevGame game) { devLib.push_back(game); }
-    bool isDev = true;
 
     virtual void description() override { cout << "I am a game library user and also a developer. My username is " << getUsername() << '.' << endl; }
     virtual void hasLibrary() override { cout << "I have a game library. It contains " << library->gameCount() << " games. Also I have " << devLib.size()

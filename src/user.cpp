@@ -60,7 +60,7 @@ void User::printInfo() {
 User::User(): User{"na", "na", "na", 0, 0} {}
 
 User::User(string &&newUsername, string &&newEmail, string &&newPassword, bool isRDev, bool isRAdmin, Person persona): 
-    username{newUsername}, email{newEmail}, password{newPassword}, isDev{isRDev}, isAdmin{isRAdmin}, Person(persona) 
+    username{newUsername}, email{newEmail}, password{newPassword}, dev{isRDev}, admin{isRAdmin}, Person(persona) 
     {
     id = 0;
     library = new Library();
@@ -74,7 +74,7 @@ User::User(string &&newUsername, string &&newEmail, string &&newPassword, Person
  User(newUsername, newEmail, newPassword, 0, 0, persona) {}
 
 User::User(string &newUsername, string &newEmail, string &newPassword, bool isRDev, bool isRAdmin, Person persona):
-    username{newUsername}, email{newEmail}, password{newPassword}, isDev{isRDev}, isAdmin{isRAdmin}, Person(persona) 
+    username{newUsername}, email{newEmail}, password{newPassword}, dev{isRDev}, admin{isRAdmin}, Person(persona) 
     {
     ifstream users("data/users.txt", ios::ate);
     if(users.is_open()) {
@@ -107,8 +107,8 @@ User &User::operator=(const User &rhs) {
     this->username = rhs.username;
     this->password = rhs.password;
     this->email = rhs.email;
-    this->isAdmin = rhs.isAdmin;
-    this->isDev = rhs.isDev;
+    this->admin = rhs.admin;
+    this->dev = rhs.dev;
     
     return *this;
 }
