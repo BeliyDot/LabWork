@@ -15,11 +15,16 @@ public:
     void printUsers();
     void printGames();
     void printRequested();
+
     void confirmRelease(Game &requested);
     void rejectRlease(Game &requested, string explanation);
 
     void ban(User &usr);
     void deleteGame(Game &game);
+    
+    Administrator();
+    Administrator(const User &other);
+
 };
 
 
