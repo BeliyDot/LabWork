@@ -62,7 +62,10 @@ User::User(): User{"na", "na", "na", 0, 0} {}
 User::User(string &&newUsername, string &&newEmail, string &&newPassword, bool isRDev, bool isRAdmin, Person persona): 
     username{newUsername}, email{newEmail}, password{newPassword}, dev{isRDev}, admin{isRAdmin}, Person(persona) 
     {
-    id = 0;
+    ifstream users("data/users.txt", ios::ate);
+    if(users.is_open()) {
+        users >> id;
+    } else id = 0; 
     library = new Library();
 } 
 
@@ -83,12 +86,14 @@ User::User(string &newUsername, string &newEmail, string &newPassword, bool isRD
     library = new Library();
 } 
 
-User::User(const User &other): username{other.username}, email{other.email}, password{other.password}, id{other.id} {
+User::User(const User &other): 
+        username{other.username}, email{other.email}, password{other.password}, id{other.id}, dev{other.dev}, admin{other.admin} {
     library = new Library();
     *library = *other.library;
 }
 
-User::User(const User &other, Person &persona): Person(persona), username{other.username}, email{other.email}, password{other.password}, id{other.id} {
+User::User(const User &other, Person &persona): 
+        Person(persona), username{other.username}, email{other.email}, password{other.password}, id{other.id}, dev{other.dev}, admin{other.admin}{
     library = new Library();
     *library = *other.library;
 }
