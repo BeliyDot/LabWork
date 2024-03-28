@@ -23,6 +23,10 @@ public:
     void deleteGame(Game &game);
     
     Administrator();
+    Administrator(string &&newUsername, string &&newEmail, string &&newPassword, unsigned int newId = 0, Person persona = Person());
+    Administrator(string &newUsername, string &newEmail, string &newPassword, unsigned int newId = 0, Person persona = Person());
+    Administrator(string &&newUsername, string &&newEmail, string &&newPassword, bool isRDev, bool isRAdmin, unsigned int newId = 0, Person persona = Person());
+    Administrator(string &newUsername, string &newEmail, string &newPassword, bool isRDev, bool isRAdmin, unsigned int newId = 0, Person persona = Person());
     Administrator(const User &other);
 
 };
