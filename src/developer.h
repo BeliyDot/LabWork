@@ -17,10 +17,10 @@ public:
     << " games in development." << endl; }
 
     Developer(): User() {} 
-    Developer(string &username, string &email, string &password, bool isDev, bool isAdmin, Person persona = Person()):
-        User(username, email, password, isDev, isAdmin, persona) {}
-    Developer(string &&username, string &&email, string &&password, bool isDev, bool isAdmin, Person persona = Person()):
-        User(username, email, password, isDev, isAdmin, persona) {}
+    Developer(string &username, string &email, string &password, bool isDev, bool isAdmin, int id = 0, Person persona = Person()):
+        User(username, email, password, isDev, isAdmin, id, persona) {}
+    Developer(string &&username, string &&email, string &&password, bool isDev, bool isAdmin, int id = 0, Person persona = Person()):
+        User(username, email, password, isDev, isAdmin, id, persona) {}
     virtual ~Developer() { }
 };
 

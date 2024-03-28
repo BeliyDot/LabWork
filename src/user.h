@@ -42,10 +42,10 @@ public:
     void sayHi() { cout << "Hi from " << username << endl; }
 
     User();
-    User(string &&newUsername, string &&newEmail, string &&newPassword, Person persona = Person());
-    User(string &newUsername, string &newEmail, string &newPassword, Person persona = Person());
-    User(string &&newUsername, string &&newEmail, string &&newPassword, bool isRDev, bool isRAdmin, Person persona = Person());
-    User(string &newUsername, string &newEmail, string &newPassword, bool isRDev, bool isRAdmin, Person persona = Person());
+    User(string &&newUsername, string &&newEmail, string &&newPassword, unsigned int newId = 0, Person persona = Person());
+    User(string &newUsername, string &newEmail, string &newPassword, unsigned int newId = 0, Person persona = Person());
+    User(string &&newUsername, string &&newEmail, string &&newPassword, bool isRDev, bool isRAdmin, unsigned int newId = 0, Person persona = Person());
+    User(string &newUsername, string &newEmail, string &newPassword, bool isRDev, bool isRAdmin, unsigned int newId = 0, Person persona = Person());
     User(const User &other);
     User(const User &other, Person &persona); 
     virtual ~User();

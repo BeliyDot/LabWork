@@ -3,7 +3,6 @@
 #include "library.h"
 #include <ostream>
 #include <string>
-#include <fstream>
 
 bool User::login(string &name, string &password) {
     if((name == this->username || name == this->email) && password == this->password) {
@@ -59,30 +58,22 @@ void User::printInfo() {
 
 User::User(): User{"na", "na", "na", 0, 0} {}
 
-User::User(string &&newUsername, string &&newEmail, string &&newPassword, bool isRDev, bool isRAdmin, Person persona): 
-    username{newUsername}, email{newEmail}, password{newPassword}, dev{isRDev}, admin{isRAdmin}, Person(persona) 
+User::User(string &&newUsername, string &&newEmail, string &&newPassword, bool isRDev, bool isRAdmin, unsigned int newId, Person persona): 
+    username{newUsername}, email{newEmail}, password{newPassword}, dev{isRDev}, admin{isRAdmin}, id{newId}, Person(persona) 
     {
-    ifstream users("data/users.txt", ios::ate);
-    if(users.is_open()) {
-        users >> id;
-    } else id = 0; 
     library = new Library();
 } 
 
 
-User::User(string &newUsername, string &newEmail, string &newPassword, Person persona):
- User(newUsername, newEmail, newPassword, 0, 0, persona) {}
+User::User(string &newUsername, string &newEmail, string &newPassword, unsigned int newId, Person persona):
+ User(newUsername, newEmail, newPassword, 0, 0, newId, persona) {}
  
-User::User(string &&newUsername, string &&newEmail, string &&newPassword, Person persona):
- User(newUsername, newEmail, newPassword, 0, 0, persona) {}
+User::User(string &&newUsername, string &&newEmail, string &&newPassword, unsigned int newId, Person persona):
+ User(newUsername, newEmail, newPassword, 0, 0, newId, persona) {}
 
-User::User(string &newUsername, string &newEmail, string &newPassword, bool isRDev, bool isRAdmin, Person persona):
-    username{newUsername}, email{newEmail}, password{newPassword}, dev{isRDev}, admin{isRAdmin}, Person(persona) 
+User::User(string &newUsername, string &newEmail, string &newPassword, bool isRDev, bool isRAdmin, unsigned int newId, Person persona):
+    username{newUsername}, email{newEmail}, password{newPassword}, dev{isRDev}, admin{isRAdmin}, id{newId}, Person(persona) 
     {
-    ifstream users("data/users.txt", ios::ate);
-    if(users.is_open()) {
-        users >> id;
-    } else id = 0; 
     library = new Library();
 } 
 
